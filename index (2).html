@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" user-scalable=no />
+    <meta name="description" content="iLensAir" />
+    <title>iLensAir</title>
+    <style>
+      @font-face {
+        font-family: "My Custom Font";
+        src: url(FontsFree-Net-SFProText-Regular.ttf) format("truetype");
+      }
+      .helle {
+        color: beige;
+      }
+      .kaufen {
+        background-color: rgb(0, 149, 255);
+        color: white;
+      }
+      a {
+        color: white;
+        text-decoration: none;
+      }
+      a:hover {
+        color: blue;
+      }
+      .container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-template-rows:
+          100px 700px repeat(2, 300px) repeat(2, 150px) auto 150px repeat(
+            3,
+            150px
+          )
+          400px;
+        background-color: #170000;
+        font-family: "My Custom Font";
+        flex-wrap: wrap;
+        flex-direction: row;
+      }
+      .container2 {
+        display: grid;
+        font-family: "My Custom Font";
+        grid-column-gap: 1%;
+        grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%) 1fr));
+        grid-template-rows: auto 100px 50px 500px 200px auto 400px;
+      }
+      @media screen and (max-width: 992px) {
+      .container2 {
+        grid-template-columns: 1fr;
+      }
+      } 
+      .item1 {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+        margin-left: 20%;
+      }
+      .item2 {
+        grid-column: 2;
+        grid-row: 1;
+        align-self: center;
+        justify-self: end;
+      }
+      .subitem2 {
+        display: inline;
+        margin-left: 2em;
+        margin-right: 2em;
+        font-size: 1.1em;
+      }
+      @media screen and (max-width: 992px) {
+        .subitem2 {
+          display: block;
+          margin: 0.5em;
+        }
+      }
+     
+      .item3 { 
+        grid-column: 1 / span 2;
+        grid-row: 2 / 3;
+        align-self: start;
+        justify-self: center;
+        object-fit: contain;
+        max-width: 100%;
+        height: auto;
+        width: auto\8;
+      }
+      .item4 {
+        grid-column: 1 / span 2;
+        grid-row: 3 / 4;
+        color: blueviolet;
+        font-size: 4em;
+        text-align: center;
+        animation: fade-in-bottom 3s ease-in-out both;
+      }
+      @keyframes fade-in-bottom {
+        0% {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+        100% {
+        transform: translateY(0);
+        opacity: 1;
+       }
+    }
+      .item5 {
+        grid-column: 1 / span 2;
+        grid-row: 4 / 5;
+        color: white;
+        font-size: 4em;
+        text-align: center;
+        animation: fade-in-bottom 6s ease-in-out both;
+      }
+      @keyframes fade-in-bottom {
+        0% {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+        100% {
+        transform: translateY(0);
+        opacity: 1;
+       }
+    }
+      .item6 {
+        grid-column: 1 / span 2;
+        grid-row: 5 / 6;
+        align-self: start;
+        justify-self: center;
+        color: white;
+        font-size: 1.5em;
+        text-align: center;
+      }
+      .item7 {
+        grid-column: 1 / span 2;
+        grid-row: 6 / 7;
+        text-align: center;
+      }
+      .item8 {
+        grid-column: 1 / span 2;
+        grid-row: 6;
+        color: blue;
+        align-self: end;
+        justify-self: center;
+        font-size: 3em;
+        animation: fade-in-bottom 8s ease-in-out both;
+      }
+      @keyframes fade-in-bottom {
+        0% {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+        100% {
+        transform: translateY(0);
+        opacity: 1;
+       }
+    }
+      
+      .item9 {
+        grid-column: 1 / span 2;
+        grid-row: 7;
+        align-self: start;
+        justify-self: center;
+        max-width: 100%;
+        height: auto;
+        width: auto\8;
+      }
+      .item10 {
+        grid-column: 1 / span 2;
+        grid-row: 8;
+        color: blue;
+        align-self: start;
+        justify-self: center;
+        font-size: 3em;
+        animation: fade-in-bottom 9s ease-in-out both;
+      }
+      @keyframes fade-in-bottom {
+        0% {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+        100% {
+        transform: translateY(0);
+        opacity: 1;
+       }
+    }
+    @media screen and (max-width: 768px) {
+      .item8,
+      .item9,
+      .item10 {
+    grid-column: 1 / span 2;
+    font-size: 2em;
+  }
+}
+      .item11 {
+        grid-column: 1 / 2;
+        grid-row: 9 / 10;
+        margin-left: 20%;
+      }
+      .item12 {
+        grid-column: 2;
+        grid-row: 9 / 10;
+        align-self: center;
+        justify-self: end;
+      }
+      .item13 {
+        grid-column: 1 / span 2;
+        grid-row: 10;
+        color: white;
+        font-size: 3em;
+        align-self: end;
+        margin-left: 10%;
+      }
+      .item14 {
+        grid-column: 1 / span 2;
+        grid-row: 11;
+        color: blueviolet;
+        font-size: 3em;
+        align-self: start;
+        margin-left: 10%;
+      }
+      .item15 {
+        grid-column: 1 / 2 ;
+        grid-row: 12;
+        justify-self: end;
+        align-self: start;
+        animation: fade-in-bottom 8s ease-in-out both;
+        animation-iteration-count: infinite;
+      }
+      @keyframes fade-in-bottom {
+        0% {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+        100% {
+        transform: translateY(0);
+        opacity: 1;
+       }
+    }
+      .item16 {
+        grid-column: 2;
+        grid-row: 12;
+        color: white;
+        font-size: 25px;
+        justify-self: start;
+        margin-top: 2%;
+      }
+      .logo {
+        grid-column: 1 / span 5;
+        margin-left: 8%;
+      }
+      .t2 {
+        grid-column: 1 / span 5;
+        grid-row: 2;
+        margin-left: 10%;
+        font-size: 2em;
+        align-self: end;
+      }
+      .t3 {
+        grid-column: 1 / span 5;
+        grid-row: 3;
+        margin-left: 10%;
+        font-size: 1em;
+        align-self: start;
+      }
+      .t4 {
+        grid-column: 1 / span 3;
+        grid-row: 4;
+        margin-left: 8%;
+        margin-top: 5%;
+        max-width: 100%;
+        height: auto;
+        width: auto\8;
+      }
+      .t5 {
+        grid-column: 4 / span 3;
+        grid-row: 4;
+        font-size: 2em;
+        place-self: start;
+      }
+      .subitemt5 {
+        display: inline;
+        margin-right: 1em;
+        margin-top: 10px;
+      }
+      .t6 {
+        grid-column: 1 / span 5;
+        grid-row: 5 / 6;
+        margin-left: 8%;
+        align-self: center;
+      }
+      .t7 {
+        grid-column: 1 / 2;
+        grid-row: 6 / 7;
+        text-align: center;
+        justify-self: start;
+      }
+      .t8 {
+        grid-column: 2 / 3;
+        grid-row: 6 / 7;
+        text-align: center;
+        justify-self: start;
+      }
+      .t9 {
+        grid-column: 3 / 4;
+        grid-row: 6 / 7;
+        text-align: center;
+        justify-self: start;
+      }
+      .t10 {
+        grid-column: 4 / 5;
+        grid-row: 6 / 7;
+        align-self: center;
+        text-align: center;
+      }
+      .t11 {
+        grid-column: 5;
+        grid-row: 6 / 7;
+        align-self: center;
+        text-align: center;
+      }
+      .t12 {
+        grid-column: 1 / 2;
+        grid-row: 7 / 8;
+        justify-self: end;
+        align-self: center;
+      }
+      .subitem13 {
+        grid-column: 2 / 3;
+        grid-row: 7 / 8;
+        align-self: center;
+        justify-self: start;
+        margin-bottom: 17%;
+        font-size: larger;
+        font-style: bold;
+      }
+      .t13 {
+        grid-column: 1 / span 2;
+        grid-row: 8;
+        text-align: start;
+        justify-self: center;
+        align-self: end;
+      }
+      .t14 {
+        grid-column: 2 / span 3;
+        grid-row: 8;
+        text-align: start;
+        justify-self: center;
+        align-self: end;
+      }
+      .t15 {
+        grid-column: 4 / span 5;
+        grid-row: 8;
+        text-align: start;
+        justify-self: center;
+        align-self: start;
+        font-size: 1em;
+      }
+      @media screen and (max-width: 900px) {
+        .item3
+        .item4,
+        .item5,
+        .subitem2
+        .item6,
+        .item9,
+        .item11,
+        .item12,
+        .item15 {
+          font-size: 2.5em;
+        }
+      }
+      @media screen and (max-width: 700px) {
+        .item3
+        .item4,
+        .item5,
+        .subitem2
+        .item6,
+        .item9,
+        .item11,
+        .item12,
+        .item15 {
+          font-size: 2em;
+        }
+      }
+        @media screen and (max-width: 600px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+      
+      .item3 {
+        grid-row: 2 / 3; /* Anpassung für das Bild */
+      }
+      
+      .item6,
+      .item9,
+      .item12,
+      .item15 {
+        font-size: 1.5em; /* Anpassung für den Text */
+      }
+    }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item1"><img src="iLensAir.png" /></div>
+      <div class="item2">
+        <div class="subitem2">
+          <a href="ueberblick.html" class="header"> Überblick </a>
+        </div>
+        <div class="subitem2">
+          <a href="warumipad.html" class="header"> Warum iPad? </a>
+        </div>
+        <div class="subitem2">
+          <a href="technischedaten.html" class="header"> Technische Daten </a>
+        </div>
+        <div class="subitem2">
+          <a href="kaufen.html" class="header"> Kaufen </a>
+        </div>
+      </div>
+      <div class="item3">
+        <img
+          src="airplanet.png"
+          width="1280"
+          height="720"
+          alt="Rote_Kugel_hell"
+        />
+      </div>
+      <div class="item4"> Power steht jede <br />Farbe.</div>
+      <div class="item5">Vier großartige Farben.</div>
+      <div class="item6">iLensAir</div>
+      <div class="item7">
+        <div class="subitem2">
+          <a href="ueberblick.html" class="header"> Überblick </a>
+        </div>
+        <div class="subitem2">
+          <a href="warumipad.html" class="header"> Warum iPad? </a>
+        </div>
+        <div class="subitem2">
+          <a href="technischedaten.html" class="header"> Technische Daten </a>
+        </div>
+        <div class="subitem2">
+          <a href="kaufen.html" class="header"> Kaufen </a>
+        </div>
+      </div>
+      <div class="item8">All Screen Designs.</div>
+      <div class="item9"><img src="Kugeln_startbildschirm.png" 
+        width="1280"
+        height="720"
+      /></div>     
+      <div class="item10">Alles sieht gut aus.</div>
+      <div class="item11"><img src="iLensAir.png" /></div>
+      <div class="item12">
+        <div class="subitem2">
+          <a href="ueberblick.html" class="header"> Überblick </a>
+        </div>
+        <div class="subitem2">
+          <a href="warumipad.html" class="header"> Warum iPad? </a>
+        </div>
+        <div class="subitem2">
+          <a href="technischedaten.html" class="header"> Technische Daten </a>
+        </div>
+        <div class="subitem2">
+          <a href="kaufen.html" class="header"> Kaufen </a>
+        </div>
+      </div>
+      <div class="item13">Alles scannen. Alles Aufnehmen.</div>
+      <div class="item14">Alle im Blick.</div>
+      <div class="item15"><img src="Lila_Kugel_front.png" width="800" /></div>
+      <div class="item16">
+        Die 12 MP Weitwinkel-Rückkamera <br />
+        ist perfekt, um Fotos und 4K Videos <br />
+        aufzunehmen. <br />
+        <br />
+        Und mit dem leistungsstarken ISP <br />
+        im M1 Chip hat das iLens Air jetzt <br />
+        Smart HDR, das alle deine Fotos <br />
+        noch beeindruckender aussehen <br />
+        lässt.
+      </div>
+    </div>
+    <div class="container2">
+      <div class="logo"><img src="iLensAir2.png" alt="" /></div>
+      <div class="t2">iLens Air kaufen</div>
+      <div class="t3">450€</div>
+      <div class="t4">
+        <button onclick="document.getElementById('myImage').src='Grune_Kugel_grauer_Hintergrund.png'">Grün!</button>
+        <img id="myImage" src="Grune_Kugel_grauer_Hintergrund.png" style="width:720px">
+        <button onclick="document.getElementById('myImage').src='Lila_Kugelgrauer_Hintergrund.png'" >Lila!</button>
+     
+      </div>
+      <div class="t5">
+        Farbe.
+        <font color="#D6CBCB">
+          Wähle deine <br />
+          Lieblingsfarbe.
+        </font>
+        <br />
+        <div class="subitemt5">
+          <img
+            src="Rote_Kugel_schwarzer_Rand.png"
+            width="180"
+            style="margin-top: 5%; margin-right: 1em"
+          />
+          <img
+            src="Lila_Kugel_schwarzer_Rand.png"
+            width="180"
+            style="margin-top: 5%; margin-right: 1em"
+          />
+        </div>
+        <br />
+        <div class="subitemt5">
+          <img
+            src="Lila_Kugel_schwarzer_Rand.png"
+            width="180"
+            style="margin-top: 5%; margin-right: 1em"
+          />
+          <img
+            src="Gruene_Kugel_schwarzer_Rand.png"
+            width="180"
+            style="margin-top: 5%; margin-right: 1em"
+          />
+        </div>
+        <div>
+          <button
+            style="
+              background-color: rgb(0, 149, 255);
+              color: white;
+              border-width: 3px;
+              border-color: black;
+              margin-top: 5%;
+              height: 50px;
+              width: 400px;
+            "
+          >
+            Hinzufügen
+          </button>
+        </div>
+      </div>
+      <div class="t6"><img src="iLensAir2.png" alt="" /></div>
+      <div class="t7">
+        <img src="Rote_Kugel_hell.png" width="400" alt="" />
+        <br />
+        <p>iLens Pro</p>
+        <p>
+          Das ultimative iLens <br />
+          Erlebnis mit der <br />
+          fortschrittlichsten <br />
+          Technologie.
+        </p>
+        <p>M2 Chip. <br />Superschnelles 5G.</p>
+        <br />
+        <p>Ab 450€</p>
+        <button class="kaufen">Kaufen</button>
+      </div>
+      <div class="t8">
+        <img src="Lila_Kugel_hell.png" width="400" alt="" />
+        <br />
+        <p>iLens Air</p>
+        <p>
+          Richtig Power in einem <br />
+          dünnen und leichten <br />
+          Design. <br />
+          <br />
+        </p>
+        <p>
+          M1 Chip <br />
+          Superschnelles 5G
+        </p>
+        <br />
+        <p>Ab 450€</p>
+        <button class="kaufen">Kaufen</button>
+      </div>
+      <div class="t9">
+        <img src="Gruene_Kugel.png" width="400" alt="" />
+        <p>
+          iLens <br />
+          10.Generation
+        </p>
+        <p>
+          Das neue iLens in <br />
+          großartigen Farben. Für <br />
+          alles, was du jeden Tag <br />
+          machst.
+        </p>
+        <p>
+          A14 Bionic Chip. <br />
+          Superschnelles 5G.
+        </p>
+        <p style="margin-top: 32px">Ab 450€</p>
+        <button class="kaufen">Kaufen</button>
+      </div>
+      <div class="t10">
+        <img src="Lila_Kugel_hell.png" width="400" alt="" />
+        <p>
+          iLens <br />
+          09. Generation
+        </p>
+        <p>
+          Das günstigste iLens <br />
+          mit allem, was <br />
+          wichtig ist.
+        </p>
+        <p>
+          A13 Bionic Chip. <br />
+          Superschnelles 4G.
+        </p>
+        <p style="margin-top: 32px"><br />Ab 450€</p>
+        <button class="kaufen">Kaufen</button>
+      </div>
+      <div class="t11">
+        <img src="Rote_Kugel_hell.png" width="400" alt="" />
+        <p>iLens mini</p>
+        <p>
+          Das ganze iLens <br />
+          Erlebnis passt auch in <br />
+          eine Hand. <br />
+          Leistungsstarer
+        </p>
+        <p>
+          Bionic Chip. <br />
+          Superschnelles 5G.
+          <br />
+        </p>
+        <p style="margin-top: 52px">Ab 450€</p>
+        <button class="kaufen">Kaufen</button>
+      </div>
+      <div class="t12">
+        <img src="iLensAir2.png" alt="" />
+      </div>
+      <div class="subitem13">iLens Air</div>
+      <div class="t13">
+        <h5>Über uns</h5>
+        <p>
+          Das sind wir <br />
+          Stellenangebote <br />
+          Blog
+        </p>
+        <h5>Einkaufen und mehr</h5>
+        <p>
+          iLens <br />
+          iLens Phone <br />
+          iLens Tablet
+        </p>
+      </div>
+      <div class="t14">
+        <h5>Account</h5>
+        <p>
+          iLens Account <br />
+          iLens Account ID verwalten <br />
+          iLens.com
+        </p>
+        <h5>iLens Store</h5>
+        <p>
+          iLens Store finden <br />
+          Today iLens <br />
+          iLens Store App
+        </p>
+      </div>
+      <div class="t15">
+        <h5>iLens Werte</h5>
+        <p>
+          Barrierefreiheit<br />
+          Bildung <br />
+          Nachhaltigkeit <br />
+          Datenschutz <br />
+          Verantwortung und Zulieferer
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
